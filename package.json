@@ -1,0 +1,13 @@
+{
+    "name": "commander-pug",
+    "version": "0.2.38",
+    "license": "GPL-3.0-only",
+    "description": "node-unblocker frontend using Pug",
+    "author": "Jasper Quartarolo",
+    "dependencies": {
+        "pug": "3.0.2",
+        "unblocker": "2.3.0",
+        "express": "4.19.2",
+        "@types/express": "4.17.21"
+    }
+}
