@@ -143,9 +143,9 @@ html(lang="en")
                 const value = e.target.value;
                 if (e.key === 'Enter') {
                     if (value !== '' && (value.startsWith('http:') || value.startsWith('https:'))) {
-                        window.location = '/ub/' + value;
+                        window.location = '/~/corrosion/gateway?url=' + value;
                     } else {
-                        window.location = '/ub/' + 'https://' + value;
+                        window.location = '/~/corrosion/gateway?url=' + 'https://' + value;
                     }
                 }
             });
