@@ -47,6 +47,14 @@ app.get('/', (req, res) => {
     res.send(pugCompiled({ data }));
 });
 
+app.use('/dynamic/', express.static('views/public/dynamic'));
+
+app.use('/public/', express.static('views/public'));
+
+app.use('/uv/', express.static('views/public/uv'));
+
+app.get('/sw.js', (req, res) => res.sendFile('views/sw.js', { root: './' }));
+
 const PORT = 8000;
 
 app.listen(PORT, () => {

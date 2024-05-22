@@ -138,14 +138,22 @@ html(lang="en")
             div.form
                 input(type="text", placeholder="search")
 
+        script(src="/uv/uv.bundle.js")
+        script(src="/uv/uv.config.js")
+
+        script(type="text/javascript").
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js', { scope: '/' });
+            });
+
         script(type="text/javascript").
             document.querySelector('body div div.form input').addEventListener('keypress', (e) => {
                 const value = e.target.value;
                 if (e.key === 'Enter') {
                     if (value !== '' && (value.startsWith('http:') || value.startsWith('https:'))) {
-                        window.location = '/~/corrosion/gateway?url=' + value;
+                        window.location = '/~/ultraviolet/' + __uv$config.encodeUrl(value);
                     } else {
-                        window.location = '/~/corrosion/gateway?url=' + 'https://' + value;
+                        window.location = '/~/ultraviolet/' + __uv$config.encodeUrl('https://' + value);
                     }
                 }
             });
