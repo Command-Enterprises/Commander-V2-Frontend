@@ -25,7 +25,7 @@ RUN mv dist .. && rm -rf * .git && mv ../dist/ .
 WORKDIR /opt/commander
 
 RUN apt-get -y update && \
-    apt-get -y install nginx && \
+    apt-get -y install nginx systemd && \
     cp -f nginx.conf /etc/nginx/nginx.conf
 
 CMD chmod +x nginx-startup.sh && bash nginx-startup.sh
