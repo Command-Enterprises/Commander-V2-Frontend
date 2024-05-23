@@ -1,31 +1,30 @@
-FROM ubuntu:latest
+# Modded from https://github.com/binary-person/womginx/blob/master/Dockerfile
+FROM node:20-bookworm as builder
 
+RUN apt -y install git
 COPY . /opt/commander
 
 WORKDIR /opt/commander
 
-RUN apt-get -y update && \
-    apt-get -y install git && \
-    rm -rf .git && git init
-
+RUN rm -rf .git && git init
 WORKDIR /opt/commander/public
-
 RUN rm -rf wombat && git submodule add https://github.com/webrecorder/wombat
-
 WORKDIR /opt/commander/public/wombat
 
 RUN git checkout 78813ad
 
-RUN apt-get -y update && \
-    apt-get -y install nodejs npm && \
-    npm i --legacy-peer-deps && npm run build-prod
+RUN npm install --legacy-peer-deps && npm run build-prod
 
 RUN mv dist .. && rm -rf * .git && mv ../dist/ .
 
 WORKDIR /opt/commander
 
-RUN apt-get -y update && \
-    apt-get -y install nginx systemd && \
-    cp -f nginx.conf /etc/nginx/nginx.conf
+FROM nginx:stable-bookworm
 
-CMD chmod +x nginx-startup.sh && bash nginx-startup.sh
+ENV PORT=80
+
+COPY --from=builder /opt/commander /opt/commander
+
+RUN cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
+
+RUN nginx -t
