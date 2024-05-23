@@ -25,6 +25,6 @@ ENV PORT=80
 
 COPY --from=builder /opt/commander /opt/commander
 
-RUN cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
+RUN rm /etc/nginx/conf.d/default.conf && cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
 
-RUN nginx -t
+RUN nginx -t && nginx
