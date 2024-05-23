@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Google Docs</title>
+    <link rel="icon" type="image/x-icon" href="https://t3.gstatic.com/faviconV2?client=SOCIAL&amp;type=FAVICON&amp;fallback_opts=TYPE,SIZE,URL&amp;url=https://docs.google.com/document/u/0/&amp;size=16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 78px;
+            background-color: rgb(12, 22, 48);
+            div {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+                top: 18%;
+                background-color: rgba(77, 87, 112, 0.712);
+                border: 2.5px solid rgb(240, 240, 186);
+                border-radius: 35px;
+                width: 64%;
+                height: 64vh;
+                h1 {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    position: absolute;
+                    top: 35%;
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 0px;
+                    color: #f1f1f1;
+                    font-size: 32px;
+                    font-weight: 700;
+                    font-family: 'Ubuntu', sans-serif;
+                    z-index: 999;
+                    p {
+                        color: #f1f1f1;
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                }
+                .icons {
+                    position: absolute;
+                    top: 5%;
+                    background-color: rgba(2, 25, 36, 0.712);
+                    width: 30%;
+                    height: 7.5vh;
+                    ion-icon {
+                        color: rgb(244, 239, 245);
+                        font-size: 25px;
+                        transition: 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+                        &[name="settings-outline"]:hover {
+                            color: rgb(122, 234, 245);
+                            transform: rotate(+12deg);
+                        }
+                        &[name="game-controller-outline"]:hover {
+                            color: rgb(187, 152, 233);
+                        }
+                    }
+                }
+                .form {
+                    position: absolute;
+                    top: 30%;
+                    background-color: rgba(2, 25, 36, 0.712);
+                    width: 87.5%;
+                    height: 40vh;
+                    input {
+                        padding-left: 12px;
+                        background-color: rgb(29, 28, 29);
+                        border: 2.75px solid rgb(240, 240, 186);
+                        border-radius: 35px;
+                        color: rgb(122, 234, 245);
+                        font-size: 16px;
+                        font-weight: 500;
+                        text-transform: lowercase;
+                        font-family: 'Ubuntu', sans-serif;
+                        width: 50%;
+                        height: 12vh;
+                        transition: 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+                        &:focus {
+                            background-color: rgba(29, 28, 29, 0.637);
+                            outline: none;
+                            width: 55%;
+                        }
+                        &::placeholder {
+                            color: rgb(122, 234, 245);
+                            font-size: 16px;
+                            font-weight: 500;
+                            text-transform: lowercase;
+                            font-family: 'Ubuntu', sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Commander
+            <p>V2</p>
+        </h1>
+        <div class="icons">
+            <ion-icon name="settings-outline" onclick="window.location.href='/settings';"></ion-icon>
+            <ion-icon name="game-controller-outline" onclick="window.location.href='/games';"></ion-icon>
+        </div>
+        <div class="form"><input type="text" placeholder="search"></div>
+    </div>
+    <script>
+        var input = document.querySelector('body div div input');
+
+        input.addEventListener('keypress', (e) => {
+            var value = e.target.value;
+
+            if (e.key === 'Enter') {
+                if (value !== '' && (value.startsWith('http:') || value.startsWith('https:'))) {
+                    window.location = '/main/' + value;
+                } else {
+                    window.location = '/main/https://www.google.com/search?q=' + value;
+                }
+            }
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
