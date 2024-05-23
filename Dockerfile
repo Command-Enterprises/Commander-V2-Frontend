@@ -27,4 +27,8 @@ COPY --from=builder /opt/commander /opt/commander
 
 RUN rm /etc/nginx/conf.d/default.conf && cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
 
-RUN nginx -t && nginx
+RUN nginx -t
+
+CMD sed -i -e "s/listen 80/listen $PORT/" /etc/nginx/nginx.conf &&\
+    [[ ! -z "$SAFE_BROWSING" ]] && sed -i -e "s/1.1.1.1/1.1.1.3/" /etc/nginx/nginx.conf || true &&\
+    nginx
