@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if systemctl --quiet is-active nginx; then
-    echo "Nginx is currently running. Restarting the service..."
-    systemctl restart nginx
-else
-    echo "Nginx is not currently running. Starting the service..."
-    systemctl start nginx
+set -e
+
+sed -i "s/listen 80/listen $PORT/" /etc/nginx/nginx.conf
+
+if [ ! -z "$SAFE_BROWSING" ]; then
+    sed -i "s/1.1.1.1/1.1.1.3/" /etc/nginx/nginx.conf
 fi
+
+nginx
