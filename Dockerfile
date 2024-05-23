@@ -4,7 +4,9 @@ COPY . /opt/commander
 
 WORKDIR /opt/commander
 
-RUN rm -rf .git && git init
+RUN apt-get -y update && \
+    apt-get install -y git && \
+    rm -rf .git && git init
 
 WORKDIR /opt/commander/public
 
