@@ -33,3 +33,13 @@ ion-icon[name="chatbox-ellipses-outline"]:hover
     color: rgb(0, 255, 0);
     transform: scale(+0.90);
 }
+.navbar
+{
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 10vh;
+}
