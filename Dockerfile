@@ -19,14 +19,18 @@ RUN mv dist .. && rm -rf * .git && mv ../dist/ .
 
 WORKDIR /opt/commander
 
+RUN chmod +x sed.sh && sh sed.sh
+
 FROM nginx:stable-bookworm
 
 ENV PORT=80
 
+ENV SAFE_BROWSING=1
+
 COPY --from=builder /opt/commander /opt/commander
 
-RUN rm /etc/nginx/conf.d/default.conf && cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
+RUN cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
 
 RUN nginx -t
 
-# CMD chmod +x /opt/commander/nginx-startup.sh && bash /opt/commander/nginx-startup.sh
+RUN chmod +x /opt/commander/entrypoint.sh && sh entrypoint.sh
