@@ -14,3 +14,6 @@
   ## Join the discord
 (Separate from the Command Enterprise server)  
 https://discord.gg/NrhUDCeU3J  
+
+## Ultraviolet Static
+https://github.com/titaniumnetwork-dev/Ultraviolet-Static/blob/main/public/index.html  
