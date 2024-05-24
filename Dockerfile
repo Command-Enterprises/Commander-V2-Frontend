@@ -33,4 +33,4 @@ RUN cp /opt/commander/nginx.conf /etc/nginx/nginx.conf
 
 RUN nginx -t
 
-RUN chmod +x /opt/commander/entrypoint.sh && sh /opt/commander/entrypoint.sh
+CMD chmod +x /opt/commander/entrypoint.sh && sh /opt/commander/entrypoint.sh
