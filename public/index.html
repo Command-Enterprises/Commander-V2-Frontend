@@ -136,9 +136,9 @@
 
             if (e.key === 'Enter') {
                 if (value !== '' && (value.startsWith('http:') || value.startsWith('https:'))) {
-                    window.location = '/main/' + value;
+                    window.location.href = '/main/' + value;
                 } else {
-                    window.location = '/main/https://www.google.com/search?q=' + value;
+                    window.location.href = '/main/https://www.google.com/search?q=' + value;
                 }
             }
         });
