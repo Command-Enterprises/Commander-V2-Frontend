@@ -29,4 +29,4 @@ RUN rm /etc/nginx/conf.d/default.conf && cp /opt/commander/nginx.conf /etc/nginx
 
 RUN nginx -t
 
-CMD chmod +x /opt/commander/nginx-startup.sh && bash /opt/commander/nginx-startup.sh
+# CMD chmod +x /opt/commander/nginx-startup.sh && bash /opt/commander/nginx-startup.sh
