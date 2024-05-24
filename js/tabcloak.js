@@ -9,7 +9,7 @@ try {
 if (!inFrame && !navigator.userAgent.includes("Firefox")) {
     const popup = open("about:blank", "_blank")
     if (!popup || popup.closed) {
-        alert("Allow popups and redirects to hide this from showing up in your history.")
+        alert("Allow popups and redirects to hide this from showing up in your history and the teachers screen.")
     } else {
         const doc = popup.document
         const iframe = doc.createElement("iframe")
