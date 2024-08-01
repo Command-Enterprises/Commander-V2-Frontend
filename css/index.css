@@ -22,14 +22,44 @@
 }
 body
 {
-    background: linear-gradient(to right, #80808078, #0241ffa1)
+    background: linear-gradient(to right, #80808078, #0241ffa1);
+    /* removes horizontal scrollbar on widgetbot chat */
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
-#bodytext
+#bodytext,#text
 {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     font-style: normal;
     position: absolute;
+}
+#bodytext
+{
     top: 50%;
     left: 43.5%;
+}
+#text
+{
+    top: 55%;
+    left: 43.5;
+    border-radius: 30px;
+}
+.game
+{
+    height: 30vh; 
+    width: 40vh;
+    border-radius: 30px;
+}
+#myiFrame
+{
+  position: absolute;
+  top: 14%;
+  height: 90%;
+}
+#content
+{
+    /* the super magical two lines that make things display in rows */
+    display: flex;
+    flex-direction: row;
 }
