@@ -27,7 +27,7 @@ body
     box-sizing: border-box;
     overflow-x: hidden;
 }
-#bodytext,#text
+#bodytext,#url
 {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
@@ -39,11 +39,12 @@ body
     top: 50%;
     left: 43.5%;
 }
-#text
+#url
 {
     top: 55%;
     left: 43.5;
     border-radius: 30px;
+    margin: 2vh;
 }
 .game
 {
@@ -62,4 +63,6 @@ body
     /* the super magical two lines that make things display in rows */
     display: flex;
     flex-direction: row;
+
+    flex-wrap: wrap;
 }
