@@ -41,8 +41,8 @@ body
 }
 #url
 {
-    top: 55%;
-    left: 43.5;
+    top: 64%;
+    left: 41.5%;
     border-radius: 30px;
     margin: 2vh;
 }
@@ -65,4 +65,12 @@ body
     flex-direction: row;
 
     flex-wrap: wrap;
+}
+#searchIcon
+{
+    color: rgb(16, 15, 17);
+    font-size: 25px;
+    position:absolute;
+    top: 64%;
+    left: 37.5%;
 }
