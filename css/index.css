@@ -22,7 +22,10 @@
 }
 body
 {
-    background: linear-gradient(to right, #80808078, #0241ffa1)
+    background: linear-gradient(to right, #80808078, #0241ffa1);
+    /* removes horizontal scrollbar on widgetbot chat */
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 #bodytext
 {
@@ -32,4 +35,10 @@ body
     position: absolute;
     top: 50%;
     left: 43.5%;
+}
+#myiFrame
+{
+  position: absolute;
+  top: 14%;
+  height: 90%;
 }
