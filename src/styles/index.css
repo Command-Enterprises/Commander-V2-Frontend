@@ -74,10 +74,10 @@ body
     top: 64%;
     left: 37.5%;
 }
-#games div {
+#content div {
     transition: 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
-#games div:hover {
+#content div:hover {
     transform: scale(1.021) translateY(-2%);
     filter: brightness(86%);
 }
@@ -96,5 +96,5 @@ body
     background-color: #AFA8A8;
     border-radius: 30vh;
     z-index: 99;
-    top: 3%;
+    top: 20%;
 }

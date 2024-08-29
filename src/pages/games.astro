@@ -17,16 +17,14 @@ import games from "../games.json";
         <div id="searchbar">
             <input type="text" id="search">
         </div>
-        <div id="games">
+        <div id="content">
         {
             games["games"].map((data) => (
-                <div id="content">
                     <div class="game-card">
                         <a href={"../gamepages/" + data[1] + ".html"}>
                             <img src={"../images/appicons/" + data[1] + ".png"} alt={data[0]} class="game">
                         </a>
                     </div>
-                </div>
             ))
         }
         </div>
