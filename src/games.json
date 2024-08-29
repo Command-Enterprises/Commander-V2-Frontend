@@ -1,5 +1,5 @@
 {
-    "comment": "game entries in game name-icon location format, icon location relative to ./images/appicons/",
+    "comment": "game entries in game name-icon location format, icon location relative to ./public/images/appicons/",
     "games": [
         ["Eaglercraft", "minecraft"],
         ["BTD5", "btd5"],
