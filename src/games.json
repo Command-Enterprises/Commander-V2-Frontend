@@ -1,0 +1,16 @@
+{
+    "comment": "game entries in game name-icon location format, icon location relative to ./images/appicons/",
+    "games": [
+        ["Eaglercraft", "minecraft"],
+        ["BTD5", "btd5"],
+        ["Dino Game", "dinogame"],
+        ["Geometry Dash", "geodash"],
+        ["House of Hazards", "houseofhazards"],
+        ["Janissary Battles", "janissarybattles"],
+        ["Janissary Towers", "janissarytower"],
+        ["Mingiants.io", "minigiants"],
+        ["Motox3m", "motox3m"],
+        ["The Password Game", "thepasswordgame"],
+        ["Slope Game", "slopegame"]
+    ]
+}

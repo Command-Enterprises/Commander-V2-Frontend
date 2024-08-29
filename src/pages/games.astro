@@ -1,0 +1,31 @@
+---
+import Boilerplate from  "../components/boilerplate.astro";
+import Navbar from "../components/navbar.astro";
+import "../styles/games.css";
+import "../styles/index.css";
+import games from "../games.json";
+---
+<html>
+    <head>
+        <Boilerplate />
+        <script defer src="../js/tabcloak.js"></script>
+    </head>
+    <body>
+        <div id="navbar">
+            <Navbar />
+        </div>
+        <div id="content">
+        {
+            games["games"].map((data) => (
+                <div id="content">
+                    <div class="game-card">
+                        <a href={"../gamepages/" + data[1] + ".html"}>
+                            <img src={"../images/appicons/" + data[1] + ".png"} alt={data[0]} class="game">
+                        </a>
+                    </div>
+                </div>
+            ))
+        }
+        </div>
+    </body>
+</html>
