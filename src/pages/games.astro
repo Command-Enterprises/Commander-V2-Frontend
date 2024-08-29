@@ -14,7 +14,10 @@ import games from "../games.json";
         <div id="navbar">
             <Navbar />
         </div>
-        <div id="content">
+        <div id="searchbar">
+            <input type="text" id="search">
+        </div>
+        <div id="games">
         {
             games["games"].map((data) => (
                 <div id="content">
