@@ -65,6 +65,9 @@ body
     flex-direction: row;
 
     flex-wrap: wrap;
+
+    position: absolute;
+    top: 40%;
 }
 #searchIcon
 {
