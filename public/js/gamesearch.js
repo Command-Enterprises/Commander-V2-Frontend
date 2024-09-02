@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-    const game_links = document.querySelectorAll("#content>a");
-    const game_links_spans = document.querySelectorAll("#content>a>span");
+    const game_links = document.querySelectorAll("#content>div");
     const game_searchbar = document.getElementById("search");
     console.log("e");
     function arrayToString(fgh){
@@ -23,7 +22,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         console.log(search)
         if(search!=""){
         for(let jk = 0;jk<game_links.length;jk++){
-            if(game_links_spans[jk].innerHTML.toLowerCase().indexOf(search)==-1){
+            if(game_links[jk].title.toLowerCase().indexOf(search)==-1){
                 hide(game_links[jk]);
             }
         }
